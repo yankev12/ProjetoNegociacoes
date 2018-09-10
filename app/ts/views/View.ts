@@ -1,7 +1,7 @@
-class View<T> { //considera a class de um tipo generico, dessa forma que os seus filhos acessem 
+abstract class View<T> { //considera a class de um tipo generico, dessa forma que os seus filhos acessem 
                 //o método e possas passar um parâmetro que não seja do tipo string neste exemplo
                 //seria o tipo Negociacao na class MensagemView e NegociacoesView
-    protected _elemento: Element;
+    private _elemento: Element;
 
     constructor(seletor: string){
         this._elemento = document.querySelector(seletor);
@@ -11,7 +11,5 @@ class View<T> { //considera a class de um tipo generico, dessa forma que os seus
         this._elemento.innerHTML = this.template(model);
     }
 
-    template(model: T): string{
-        throw new Error('Você deve implementa o método template');
-    }
+    abstract template(model: T): string;
 }

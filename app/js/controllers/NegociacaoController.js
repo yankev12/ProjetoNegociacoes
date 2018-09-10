@@ -9,7 +9,7 @@ class NegociacaoController {
         this._negociacoesView.update(this._negociacoes);
     }
     adiciona(event) {
-        event.preventDefault(); //evita que a página seja recarregada
+        event.preventDefault(); //evita que a página seja recarregada 
         const negociacao = new Negociacao(new Date(this._inputData.value.replace(/-/, '/')), parseFloat(this._inputValor.value), parseInt(this._inputQuantidade.value));
         this._negociacoes.adiciona(negociacao);
         this._negociacoesView.update(this._negociacoes);
