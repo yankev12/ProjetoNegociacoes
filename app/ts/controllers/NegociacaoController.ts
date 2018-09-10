@@ -16,7 +16,7 @@ class NegociacaoController {
 
     adiciona(event: Event){
         
-        event.preventDefault(); //evita que a página seja recarregada
+        event.preventDefault(); //evita que a página seja recarregada 
         const negociacao = new Negociacao(
             new Date(this._inputData.value.replace(/-/, '/')),
             parseFloat(this._inputValor.value),
