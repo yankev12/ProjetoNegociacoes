@@ -4,8 +4,8 @@ class NegociacaoController {
     private _inputValor: HTMLInputElement;
     private _inputQuantidade: HTMLInputElement;
     private _negociacoes = new Negociacoes();
-    private _negociacoesView = new NegociacaoView('#negociacoesView');
-    private _mensagemView = new MensagemView('#mensagemView');
+    private _negociacoesView = new Views.NegociacaoView('#negociacoesView');
+    private _mensagemView = new Views.MensagemView('#mensagemView');
 
     constructor(){
         this._inputData = <HTMLInputElement>document.querySelector('#data');
