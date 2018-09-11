@@ -1,4 +1,7 @@
-class NegociacaoView extends View<Negociacoes>{
+import { Negociacoes } from './../models/Negociacoes';
+import { View } from './View';
+
+export class NegociacaoView extends View<Negociacoes>{
 
     template(model: Negociacoes): string {
         return `
@@ -29,3 +32,4 @@ class NegociacaoView extends View<Negociacoes>{
         `;
     }
 }
+

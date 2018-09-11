@@ -1,6 +1,6 @@
-abstract class View<T> { //considera a class de um tipo generico, dessa forma que os seus filhos acessem 
-                //o método e possas passar um parâmetro que não seja do tipo string neste exemplo
-                //seria o tipo Negociacao na class MensagemView e NegociacoesView
+export abstract class View<T> { //considera a class de um tipo generico, dessa forma que os seus filhos acessem 
+    //o método e possas passar um parâmetro que não seja do tipo string neste exemplo
+    //seria o tipo Negociacao na class MensagemView e NegociacoesView
     private _elemento: Element;
 
     constructor(seletor: string){
@@ -13,3 +13,5 @@ abstract class View<T> { //considera a class de um tipo generico, dessa forma qu
 
     abstract template(model: T): string;
 }
+
+
