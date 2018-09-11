@@ -1,7 +1,17 @@
-import { View } from './View';
-export class NegociacaoView extends View {
-    template(model) {
-        return `
+System.register(["./View"], function (exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
+    var View_1, NegociacaoView;
+    return {
+        setters: [
+            function (View_1_1) {
+                View_1 = View_1_1;
+            }
+        ],
+        execute: function () {
+            NegociacaoView = class NegociacaoView extends View_1.View {
+                template(model) {
+                    return `
         <table class="table table-hover table-bordered">
             <thead>
                 <tr>
@@ -25,5 +35,9 @@ export class NegociacaoView extends View {
             </tfoot>
         </table> 
         `;
-    }
-}
+                }
+            };
+            exports_1("NegociacaoView", NegociacaoView);
+        }
+    };
+});
