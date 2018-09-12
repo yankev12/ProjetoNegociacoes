@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/jquery": "^2.0.42",
     "typescript": "^2.3.2"
   },
   "devDependencies": {
