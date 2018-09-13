@@ -15,6 +15,7 @@ export class NegociacaoController {
         this._inputValor = $('#valor');
         this._inputQuantidade = $('#quantidade');
         this._negociacoesView.update(this._negociacoes);
+        let teste = false;
     }
 
     adiciona(event: Event){

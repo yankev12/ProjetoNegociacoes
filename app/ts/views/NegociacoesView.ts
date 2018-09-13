@@ -18,9 +18,9 @@ export class NegociacaoView extends View<Negociacoes>{
             <tbody>
                 ${model.paraArray().map(negociacao => 
                     `<tr>
-                        <td>${negociacao.data.getDate()}/${negociacao.data.getMonth()+1}/${negociacao.data.getFullYear()}</td>
-                        <td>${negociacao.quantidade}</td>
-                        <td>${negociacao.valor}</td>
+                        <td>${negociacao._data.getDate()}/${negociacao._data.getMonth()+1}/${negociacao._data.getFullYear()}</td>
+                        <td>${negociacao._quantidade}</td>
+                        <td>${negociacao._valor}</td>
                         <td>${negociacao.volume}</td>
                     </tr>`
                 ).join('')}

@@ -15,16 +15,17 @@ System.register(["./../models/index", "./../views/index"], function (exports_1, 
             NegociacaoController = class NegociacaoController {
                 constructor() {
                     this._negociacoes = new index_1.Negociacoes();
-                    this._negociacoesView = new index_2.NegociacaoView('#negociacoesView');
+                    this._negociacoesView = new index_2.NegociacaoView('#negociacoesView', true);
                     this._mensagemView = new index_2.MensagemView('#mensagemView');
-                    this._inputData = document.querySelector('#data');
-                    this._inputValor = document.querySelector('#valor');
-                    this._inputQuantidade = document.querySelector('#quantidade');
+                    this._inputData = $('#data');
+                    this._inputValor = $('#valor');
+                    this._inputQuantidade = $('#quantidade');
                     this._negociacoesView.update(this._negociacoes);
+                    let teste = false;
                 }
                 adiciona(event) {
-                    event.preventDefault(); //evita que a página seja recarregada 
-                    const negociacao = new index_1.Negociacao(new Date(this._inputData.value.replace(/-/, '/')), parseFloat(this._inputValor.value), parseInt(this._inputQuantidade.value));
+                    event.preventDefault();
+                    const negociacao = new index_1.Negociacao(new Date(this._inputData.val().replace(/-/, '/')), parseFloat(this._inputValor.val()), parseInt(this._inputQuantidade.val()));
                     this._negociacoes.adiciona(negociacao);
                     this._negociacoesView.update(this._negociacoes);
                     this._mensagemView.update('negociacao cadastrada com sucesso');

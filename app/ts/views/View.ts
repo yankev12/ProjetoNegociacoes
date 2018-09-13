@@ -8,8 +8,9 @@ export abstract class View<T> { //considera a class de um tipo generico, dessa f
      * @param seletor :: qual o id da tag html que vai ser alterado
      * @description :: ao instanciar uma nova View, é necessário declarar qual id da tag html
      */
-    constructor(seletor: string, escapar?: boolean){
+    constructor(seletor: string, escapar: boolean = false){
         this._elemento = $(seletor);
+        this._escapar = escapar;
     }
     /**
      * @function update
