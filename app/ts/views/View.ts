@@ -1,13 +1,14 @@
 export abstract class View<T> { //considera a class de um tipo generico, dessa forma que os seus filhos acessem 
                 //o método e possas passar um parâmetro que não seja do tipo string neste exemplo
                 //seria o tipo Negociacao na class MensagemView e NegociacoesView
-    private _elemento: JQuery;
+    protected _elemento: JQuery;
+    private _escapar: boolean;
     /**
      * @function constructor
      * @param seletor :: qual o id da tag html que vai ser alterado
      * @description :: ao instanciar uma nova View, é necessário declarar qual id da tag html
      */
-    constructor(seletor: string){
+    constructor(seletor: string, escapar?: boolean){
         this._elemento = $(seletor);
     }
     /**
@@ -16,6 +17,9 @@ export abstract class View<T> { //considera a class de um tipo generico, dessa f
      * @description :: método para atualizar a template string 
      */
     update(model: T): void{
+        let template = this.template(model);
+        if(this._escapar)
+            template = template.replace(/<script>[\s\S]*?<\/script>/, '');
         this._elemento.html(this.template(model));
     }
     /**
