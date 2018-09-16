@@ -1,0 +1,37 @@
+função replcae do Typescript
+	/-/g, ','
+	
+função acima se encontra no arquivo NegociacaoController.ts do projeto Alura
+
+
+casting explicito converter um tipo especifico para um tipo mais generico
+poderia usar o casting explicito para deixar um tipo mais generico no modal das visualizações
+
+encapsular os componentes
+
+blindar as funções
+
+
+template String para gerar o html
+
+IndexedDB um tipo de banco de dados que vive dentro do navegador, 
+
+pode indicar mais de um tipo generico
+
+// deixarmos explícitos que a função pode retornar boolean ou null
+function minhaFuncao(flag: boolean): boolean | null{
+
+    let valor = null;
+    if(flag) return null;
+    return true;
+}
+
+let x = minhaFuncao(false);
+
+
+para passar de um elemento pai para o filho é necessário verificar se ela exista
+
+
+TypeScript possui um tipo curioso, o tipo never. Este tipo é aplicável à métodos ou funções que por algum motivo, planejado ou não, podem não terminar sua execução de seu bloco.
+
+Exemplos clássicos são os de métodos que caem em um loop infinito ou de métodos que sempre retornam exceções. Exceções fazem com que o método não execute até o fim.
