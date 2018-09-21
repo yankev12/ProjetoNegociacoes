@@ -18,7 +18,6 @@ export abstract class View<T> { //considera a class de um tipo generico, dessa f
      * @param model :: template string
      * @description :: método para atualizar a template string 
      */
-    @logarTempoDeExecucao(true)
     update(model: T): void{
         let template = this.template(model);
         if(this._escapar)
