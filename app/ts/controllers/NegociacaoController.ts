@@ -1,5 +1,6 @@
 import { Negociacao, Negociacoes } from './../models/index';
 import { MensagemView, NegociacaoView } from './../views/index';
+import { logarTempoDeExecucao } from './../helpers/decorators/index';
 
 export class NegociacaoController {
 
@@ -17,7 +18,7 @@ export class NegociacaoController {
         this._negociacoesView.update(this._negociacoes);
         let teste = false;
     }
-
+    @logarTempoDeExecucao()
     adiciona(event: Event){
         
         event.preventDefault(); //evita que a página seja recarregada

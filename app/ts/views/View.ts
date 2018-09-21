@@ -1,3 +1,4 @@
+import { logarTempoDeExecucao } from './../helpers/decorators/index'
 export abstract class View<T> { //considera a class de um tipo generico, dessa forma que os seus filhos acessem 
                 //o método e possas passar um parâmetro que não seja do tipo string neste exemplo
                 //seria o tipo Negociacao na class MensagemView e NegociacoesView
@@ -17,6 +18,7 @@ export abstract class View<T> { //considera a class de um tipo generico, dessa f
      * @param model :: template string
      * @description :: método para atualizar a template string 
      */
+    @logarTempoDeExecucao(true)
     update(model: T): void{
         let template = this.template(model);
         if(this._escapar)
