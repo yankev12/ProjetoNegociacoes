@@ -45,6 +45,29 @@ export class NegociacaoController {
     private _ehDiaUtil(date: Date){
         return date.getDay() != DiaDaSemana.Domingo && date.getDay() != DiaDaSemana.Sabado;
     }
+
+    public importaDados(){
+
+        function isOk(res: Response){
+            if(res.ok){
+                return res;
+            } else {
+                throw new Error(res.statusText);
+            }
+        }
+        fetch('http://localhost:8080/dados')
+        .then(res => isOk(res))
+        .then(res => res.json())
+        .then((dados: any[]) => 
+        dados
+          .map(dado => new Negociacao(new Date(), dado.vezes, dado.montante))
+          .forEach(negociacao => {
+            this._negociacoes.adiciona(negociacao);
+           })
+        )
+        .catch(err => console.log(err.message));
+        this._negociacoesView.update(this._negociacoes)
+    }
 }
 
 enum DiaDaSemana{

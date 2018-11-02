@@ -1,4 +1,4 @@
-função replcae do Typescript
+﻿função replcae do Typescript
 	/-/g, ','
 	
 função acima se encontra no arquivo NegociacaoController.ts do projeto Alura
@@ -35,3 +35,11 @@ para passar de um elemento pai para o filho é necessário verificar se ela exis
 TypeScript possui um tipo curioso, o tipo never. Este tipo é aplicável à métodos ou funções que por algum motivo, planejado ou não, podem não terminar sua execução de seu bloco.
 
 Exemplos clássicos são os de métodos que caem em um loop infinito ou de métodos que sempre retornam exceções. Exceções fazem com que o método não execute até o fim.
+
+//comando que é do javascript, que analisar a performance do código
+comando performance.now();
+
+//decorators
+permite interceptar um método, colocar linhas de código antes de executar e depois de executar
+
+um decorator deve retornar uma função
