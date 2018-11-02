@@ -49,14 +49,14 @@ System.register(["../models/index", "../views/index", "../helpers/decorators/ind
                     return date.getDay() != DiaDaSemana.Domingo && date.getDay() != DiaDaSemana.Sabado;
                 }
                 importaDados() {
-                    function isOk(res) {
+                    const isOk = (res) => {
                         if (res.ok) {
                             return res;
                         }
                         else {
                             throw new Error(res.statusText);
                         }
-                    }
+                    };
                     this._negogicaoService.obterNegociacao(isOk)
                         .then(negociacoes => {
                         negociacoes.forEach(negocicao => this._negociacoes.adiciona(negocicao));

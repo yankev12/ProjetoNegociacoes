@@ -1,7 +1,7 @@
 import { Negociacao, Negociacoes, NegociacaoParcial } from '../models/index';
 import { MensagemView, NegociacaoView } from '../views/index';
 import { domInject } from '../helpers/decorators/index';
-import { NegociacaoService } from '../Services/index'
+import { NegociacaoService, ResponseHandler } from '../Services/index'
 
 export class NegociacaoController {
 
@@ -50,7 +50,7 @@ export class NegociacaoController {
 
     public importaDados(){
 
-        function isOk(res: Response){
+        const isOk: ResponseHandler = (res: Response) =>{
             if(res.ok){
                 return res;
             } else {
